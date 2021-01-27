@@ -23,24 +23,17 @@ if (!guess){
         document.querySelector('.highscore').textContent = highscore;
     }
 }
-else if (guess>secretNumber){
+else if (guess!==secretNumber){
     if (score >1){
-    document.querySelector('.message').textContent='too high';
-    score--;
-    document.querySelector('.score').textContent = score;
+        document.querySelector('.message').textContent= guess>secretNumber ? 'too high': 'too low';
+        score--;
+        document.querySelector('.score').textContent = score;
+    }
+
 }
 else{
-    document.querySelector('.message').textContent ='You lost the game'
-}}
-else if (guess<secretNumber){
-    if (score>1){
-    document.querySelector('.message').textContent='too low';
-    score--;
+    document.querySelector('.message').textContent ='You lost the game';
     document.querySelector('.score').textContent = score;
-}
-else{
-    document.querySelector('.message').textContent ='you lost the game';
-}
 }
 }
 )
